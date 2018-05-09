@@ -64,8 +64,20 @@ export class InversifyRestifyServer {
 
             let controllerMetadata: interfaces.ControllerMetadata = Reflect.getOwnMetadata(
                 METADATA_KEY.controller,
-                controller.__proto__.constructor
+                Object.getPrototypeOf(controller).constructor
             );
+            let controllerMetadata2: interfaces.ControllerMetadata = Reflect.getOwnMetadata(
+              METADATA_KEY.controller,
+              controller.constructor
+            );
+            let controllerMetadata3: interfaces.ControllerMetadata = Reflect.getOwnMetadata(
+              METADATA_KEY.controller,
+              (controller as any).__proto__.constructor
+            );
+
+            console.log(controllerMetadata);
+            console.log(controllerMetadata2);
+            console.log(controllerMetadata3);
 
             if (this.defaultRoot !== null && typeof controllerMetadata.path === "string") {
                 controllerMetadata.path = this.defaultRoot + controllerMetadata.path;
@@ -75,7 +87,7 @@ export class InversifyRestifyServer {
 
             let methodMetadata: interfaces.ControllerMethodMetadata[] = Reflect.getOwnMetadata(
                 METADATA_KEY.controllerMethod,
-                controller.__proto__.constructor
+                Object.getPrototypeOf(controller).constructor
             );
 
             if (controllerMetadata && methodMetadata) {

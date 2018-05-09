@@ -1,12 +1,14 @@
 {
   "name": "@stocard/inversify-restify-utils",
-  "version": "3.3.1",
+  "version": "3.3.4",
   "description": "Some utilities for the development of restify applications with Inversify",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
   "typings": "./dts/index.d.ts",
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
   },
   "publishConfig": {
     "registry": "https://nexus.stocard-backend.com/repository/npm-stocard"
@@ -47,8 +49,8 @@
     "publish-please": "2.4.1",
     "reflect-metadata": "0.1.12",
     "run-sequence": "2.2.1",
-    "source-map-support": "0.5.5",
     "sinon": "5.0.2",
+    "source-map-support": "0.5.5",
     "supertest": "3.0.0",
     "tslint": "5.9.1",
     "typescript": "2.6.2"
