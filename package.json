@@ -6,13 +6,11 @@
   "jsnext:main": "es/index.js",
   "typings": "./dts/index.d.ts",
   "scripts": {
-    "test": "gulp",
-    "publish-please": "publish-please",
-    "prepublish": "publish-please guard"
+    "test": "gulp"
   },
   "publishConfig": {
     "registry": "https://nexus.stocard-backend.com/repository/npm-stocard"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/inversify/inversify-restify-utils.git"
